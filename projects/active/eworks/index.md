@@ -98,4 +98,4 @@ SQL script: `scripts/pwa_tables_archibius.sql` (run via Archibus Smart Client)
 
 ---
 
-**Last Updated**: 2026-06-18 | Status: Active Development / Live
+**Last Updated**: 2026-07-29 | Status: Active Development / Live

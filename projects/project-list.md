@@ -5,10 +5,10 @@
 
 | Pos | Project | Last Updated | Status |
 |-----|---------|--------------|--------|
-| 1 | **[ScoutOps](./active/scoutops/index.md)** | 2026-07-15 | 🟢 Active |
-| 2 | **[ea_newv3 (e-Aduan v3)](./active/ea_newv3/diary/2026-06-03.md)** | 2026-06-03 | 🟡 Cooling |
-| 3 | **[ruangniaga](./active/ruangniaga/index.md)** | 2026-05-14 | 🔴 Stale |
-| 4 | **[eWorks](./active/eworks/index.md)** | 2026-05-07 | 🔴 Stale |
+| 1 | **[eWorks](./active/eworks/index.md)** | 2026-07-29 | 🟢 Active |
+| 2 | **[ScoutOps](./active/scoutops/index.md)** | 2026-07-15 | 🟢 Active |
+| 3 | **[ea_newv3 (e-Aduan v3)](./active/ea_newv3/diary/2026-06-03.md)** | 2026-06-03 | 🟡 Cooling |
+| 4 | **[ruangniaga](./active/ruangniaga/index.md)** | 2026-05-14 | 🔴 Stale |
 
 ## Archived Projects
 
@@ -17,4 +17,4 @@
 ---
 ## System Status
 - **Total Projects**: 4 (4 active + 0 archived)
-- **Last Updated**: 2026-07-15 — Added ScoutOps (new project, LRU pos #1)
+- **Last Updated**: 2026-07-30 — eWorks disegerakkan semula ke LRU pos #1 (fail sebenar terbaru 2026-07-29, tracker lama tersilap tunjuk 2026-05-07 — tak sync dengan CR yang telah siap)

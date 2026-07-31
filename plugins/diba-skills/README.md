@@ -96,6 +96,8 @@ continuous-improvement · dashboard · image-prompt · interactive-story · mula
 - Semua skill dalam folder `skills/[skill-name]/SKILL.md` dikesan secara automatik.
 - Installer: `.claude/hooks/session-start.sh` — plugin canonical, Feature gap-fill, deprecated list skipped.
 - `README.md` ini rujukan manusia + trigger registry; bukan fail indeks wajib untuk plugin.
+- **Skill routing = exact trigger-phrase match sahaja** (table di atas). Ini mekanisme SATU-SATUNYA yang aktif.
+- **Percubaan semantic skill-routing (2026-07-23, DITOLAK)**: skill corpus disync ke ruflo/claude-flow HNSW vector store (`.swarm/`, namespace `diba-skills`) sebagai fallback bila trigger tak match exact. Data-prep (indexed text: skill name + trigger phrases + description) berjaya dan tersimpan betul, tapi search pipeline ruflo sendiri (agentdb/HNSW) return hasil salah/tak konsisten secara konsisten — malah query verbatim trigger phrase pun gagal match skill yang betul, dan hasil berulang (duplicate) muncul dalam satu call yang sama. Punca kemungkinan sama dengan EPERM lock contention pada `.swarm/memory.db` (daemon background claude-flow jalan serentak). **Keputusan**: jangan pakai `ruflo memory search -n diba-skills` untuk routing produksi — corpus kekal tersimpan (boleh berguna untuk debug/eksperimen masa depan), tapi trigger-table di atas kekal sumber kebenaran tunggal.
 
 ---
 *[[Feature/INDEX|Feature Index]] · [[HOME|HOME]] · [[main/main-memory|main-memory]]*
