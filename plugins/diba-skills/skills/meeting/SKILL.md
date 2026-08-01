@@ -75,3 +75,5 @@ Simpan ke: `C:/Users/Administrator/xdibax/DIBA/projects/meetings/YYYY-MM-DD-meet
 ## Level History
 - **Lv.1** — Base: roster 10 agent, format 6 langkah, simpan minit meeting.
 - **Lv.2** — Diary Chain: selepas minit disimpan, append ringkasan ke daily-diary + current-session follow-up. (Origin: 2026-05-22 — naikkan skill batch)
+- **Lv.3** — Proactive Convene: bila Abam bincang isu merentas 2+ bidang agent tanpa explicitly minta "meeting", DIBA tawar convene meeting relevan. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Decision Bridge: keputusan strategik dari Rumusan DIBA auto-cadang log terus ke `decisions.md` (via log-decision), bukan hanya tersimpan dalam minit meeting berasingan. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

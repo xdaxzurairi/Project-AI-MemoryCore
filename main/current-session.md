@@ -1,21 +1,19 @@
 # Current Session Recap
 
-**Tarikh:** 2026-07-16
-**Topik:** DIBA Department Architecture — verification + gemini sync
+**Tarikh:** 2026-07-22
+**Topik:** Eksplorasi Kod Upload Foto & Plan MinIO — EA New v3
 
-## Keputusan
-- Routing test PASS: `/dev`→code-sharp, `/memory`→echo-recall, `/finance`→financial-snapshot
-- skill-manifest.json valid: 60 skills, trigger matching berfungsi
-- 9 dept heads disync ke `.gemini/skills/` (commit 537e5c8)
-- auto-learn: R001 (Write tool-fail = noise), R002 (SDD → verify dengan git)
-- save-diary Lv.4 diupdate: semua diary (termasuk XDIBAX internal) kini send Telegram
+**Keputusan:**
+- Semak 4 fail upload foto: `upload_foto.php`, `foto_temp.php`, `foto.php`, `simpan.php`
+- MinIO integration akan guna S3.php single-file library (tanpa Composer)
+- Gambar lama kekal dalam `/uploads/wr/`, MinIO untuk gambar baru sahaja
+- Serve via Presigned URL, expiry 24 jam
+- Sesi ditangguh — Abam tidak sihat
 
-## Fail terakhir diubah
-- `.gemini/skills/` — 9 dept head skills baru
-- `Project-AI-MemoryCore/library/learned/` — cases.md, rules.md, learned-index.md
-- `Project-AI-MemoryCore/main/signal-buffer.md` — 11 entries [done]
-- `C:/Users/BSM/.claude/skills/save-diary/skill.md` — Lv.4 filter removed (all → Telegram)
+**Fail terakhir diubah:**
+- Tiada — sesi eksplorasi & planning sahaja
 
-## Follow-up terbuka
-- Forge lebih `/legal` skills bila ada kontrak sebenar
-- Kemaskini `finance-head` description — buang "(forge queue)" dari financial-snapshot + invoice-chaser
+**Follow-up terbuka:**
+- Sambung brainstorming MinIO bila Abam sihat
+- Pendekatan A (S3.php) dah dipilih — perlu present design penuh
+- Langkah: Design → Spec doc → writing-plans → implementation

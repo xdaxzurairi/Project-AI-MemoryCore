@@ -95,3 +95,5 @@ Always-on — silent classification before every response. No output unless esca
 
 - **Lv.1** — Base: 3-tier classification, silent auto-routing, override commands. Claimed model switching (haiku/sonnet/fast) — fictional. (Origin: Forge by Zuex, 2026-06-09)
 - **Lv.2** — Honesty rescope: effort calibration (depth/tools/verification) instead of model switching; model changes are *suggested* to Abam, never claimed. (Origin: CTO audit 2026-07-04, F-smart-effort)
+- **Lv.3** — Proactive Re-Classification: monitor drift tier sepanjang task panjang, semak semula tier tiap beberapa langkah besar tanpa tunggu trigger eskalasi eksplisit. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Discipline Guard: tier Hard + skop besar auto-check dengan `discipline` Context Lock supaya effort tinggi tak jadi lesen untuk scope creep. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

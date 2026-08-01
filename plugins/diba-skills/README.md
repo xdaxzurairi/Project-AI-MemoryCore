@@ -3,7 +3,7 @@
 
 ## Plugin Info
 - **Name**: diba-skills
-- **Version**: 2.1.0
+- **Version**: 2.2.0
 - **Author**: Zuex
 - **Rule**: `Feature/*/SKILL.md` copies are documentation/history only (marked SUPERSEDED). Edit skills HERE.
 
@@ -48,6 +48,16 @@ One owner per phrase. Before adding or leveling a skill, grep this table — a p
 | code-sharp | (auto before writing/editing code) |
 | discipline | "discipline", "semak disiplin", "balik standard", "anchor", "fokus", "lock", "jangan melalut", "stay on task" · (background drift monitor, every 5 responses) |
 | resonance | "resonance", "jom fikir sama", "let's think together", "mode explore", "dream", "bagi idea baru", "brainstorm", "cuba impikan" |
+| focused-fix | "fix bug ni", "kenapa X tak jalan", "repair this feature", "something wrong dengan" |
+| security-guidance | (auto before Edit/Write kod) · "security check", "selamat ke code ni", "ada vulnerability tak", "audit security" |
+| env-secrets-manager | ".env", "secret bocor", "rotate credential", "leak API key", "check secrets" |
+| dependency-auditor | "audit dependency", "check license", "upgrade packages", "vulnerable package" |
+| tech-debt-tracker | "tech debt", "hutang teknikal", "apa patut refactor dulu", "prioritize cleanup" |
+| changelog-generator | "buat changelog", "generate release notes", "apa yang berubah sejak version lepas" |
+| deep-work | "time block hari ni", "susun deep work", "shallow work minggu ni", "focus session", "shutdown ritual" |
+| weekly-review | "gtd review", "audit komitmen", "apa yang stalled", "clear semua open loop", "trusted system check" |
+| capture | "brain dump", "ok banyak nak cakap ni", "catat semua ni" |
+| experiment-designer | "design A/B test", "macam mana nak test feature ni", "hypothesis untuk experiment", "berapa sample size" |
 
 ### Knowledge & analysis
 | Skill | Owned triggers |
@@ -57,6 +67,8 @@ One owner per phrase. Before adding or leveling a skill, grep this table — a p
 | project-map | "graphify", "map projek", "buat index", "dependency map", "cari kat mana" |
 | forge-skill | "create skill", "forge this", "level up", "upgrade skill", "naikkan skill" · auto on 3+ repeated patterns |
 | ask-nemotron | "nm:", "nemotron:", "#nm", "claude limit", "nemotron takeover", "guna nemotron je", "guna local model" |
+| pulse | "apa orang cakap pasal", "sentiment terkini", "trend minggu ni", "check reddit pasal", "check HN pasal" |
+| deep-research | "penyiasatan mendalam", "deep research pasal", "kajian menyeluruh dengan sumber" |
 
 ### Design, creative & marketing
 | Skill | Owned triggers |
@@ -84,6 +96,8 @@ continuous-improvement · dashboard · image-prompt · interactive-story · mula
 - Semua skill dalam folder `skills/[skill-name]/SKILL.md` dikesan secara automatik.
 - Installer: `.claude/hooks/session-start.sh` — plugin canonical, Feature gap-fill, deprecated list skipped.
 - `README.md` ini rujukan manusia + trigger registry; bukan fail indeks wajib untuk plugin.
+- **Skill routing = exact trigger-phrase match sahaja** (table di atas). Ini mekanisme SATU-SATUNYA yang aktif.
+- **Percubaan semantic skill-routing (2026-07-23, DITOLAK)**: skill corpus disync ke ruflo/claude-flow HNSW vector store (`.swarm/`, namespace `diba-skills`) sebagai fallback bila trigger tak match exact. Data-prep (indexed text: skill name + trigger phrases + description) berjaya dan tersimpan betul, tapi search pipeline ruflo sendiri (agentdb/HNSW) return hasil salah/tak konsisten secara konsisten — malah query verbatim trigger phrase pun gagal match skill yang betul, dan hasil berulang (duplicate) muncul dalam satu call yang sama. Punca kemungkinan sama dengan EPERM lock contention pada `.swarm/memory.db` (daemon background claude-flow jalan serentak). **Keputusan**: jangan pakai `ruflo memory search -n diba-skills` untuk routing produksi — corpus kekal tersimpan (boleh berguna untuk debug/eksperimen masa depan), tapi trigger-table di atas kekal sumber kebenaran tunggal.
 
 ---
 *[[Feature/INDEX|Feature Index]] · [[HOME|HOME]] · [[main/main-memory|main-memory]]*

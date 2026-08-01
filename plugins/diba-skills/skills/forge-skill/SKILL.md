@@ -96,13 +96,7 @@ Draft ready -- approve to forge?
 
 **For NEW skill:**
 1. Create skill folder: `plugins/[plugin-name]/skills/[skill-name]/`
-2. Write `SKILL.md` following the standard skill format:
-   - YAML frontmatter with name + description (trigger phrases)
-   - Activation section (what the AI says when triggered)
-   - Context Guard table (when active vs dormant)
-   - Protocol steps (step-by-step execution)
-   - Mandatory rules
-   - Level History (starting at Lv.1)
+2. Write `SKILL.md` following the **Skill File Template** below (frontmatter, activation, context guard, protocol, rules, Level History starting at Lv.1)
 3. Verify file was created successfully
 
 **For LEVEL-UP:**
