@@ -65,3 +65,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: If/Then/Because hypothesis format, primary/guardrail/secondary metrics, sample size estimation, ICE prioritization, statistical interpretation guardrails. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `product-team/skills/experiment-designer`, disesuaikan sebagai protokol reasoning tanpa kalkulator Python berasingan)
+- **Lv.2** — Proactive Flag: bila Abam nak lancar feature berisiko pada metrik utama tanpa sebut "test"/"A/B", DIBA tawar design experiment dulu. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — ICE Backlog: simpan senarai eksperimen dicadang dengan skor ICE dalam projek berkaitan, supaya prioriti boleh dibanding merentas sesi. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Decision Bridge: keputusan proceed/kill/extend selepas Step 4 auto-cadang log ke `decisions.md` dengan magnitud kesan sebagai rationale. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

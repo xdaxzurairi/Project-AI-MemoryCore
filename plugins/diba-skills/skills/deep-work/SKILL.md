@@ -64,3 +64,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: shallow-work auditor (recent-graduate test), time-block planner (deep-first, ≥90min, 4hr cap refusal, max 2 shallow batch), focus session logger, shutdown ritual. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `productivity/deep-work`, disesuaikan tanpa app/calendar integration — reasoning + catatan sesi sahaja)
+- **Lv.2** — Proactive Shallow-Flag: DIBA sendiri perasan Abam buat kerja shallow berturut tanpa diminta audit, tawar audit ringkas. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Streak Persistence: setiap sesi deep work auto-simpan ke `current-session.md` supaya streak berterusan merentas sesi, bukan hanya dalam sesi semasa. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Break-Reminder Chain: shutdown ritual auto-chain ke `break-reminder` bila sesi deep work panjang tanpa rehat, elak burnout selepas blok fokus tinggi. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

@@ -59,3 +59,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: scan manifest, klasifikasi lesen, upgrade risk matrix Low/Med/High/Critical. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `engineering/skills/dependency-auditor`, dipermudah dari offline 8-ekosistem tooling penuh ke protokol audit reasoning-led yang guna WebSearch bila perlu)
+- **Lv.2** — Proactive Pre-Add Flag: sebelum edit fail manifest untuk tambah dependency baru, auto-semak lesen/versi tanpa tunggu Abam minta audit. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Trend Snapshot: simpan snapshot audit dalam projek supaya scan seterusnya boleh banding dependency baru outdated sejak audit lepas. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Security-Guidance Bridge: package dengan CVE dikesan auto-flag high-priority silang rujuk dengan `security-guidance` punya pattern check. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

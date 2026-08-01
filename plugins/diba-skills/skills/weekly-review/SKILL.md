@@ -10,6 +10,8 @@ description: "MUST use when Abam minta 'GTD review', 'audit komitmen', 'apa yang
 # Weekly Review — GTD Trusted-System Audit
 *Bukan brief projek — ini audit sama ada sistem "ingat semua benda" masih boleh dipercayai.*
 
+> **Bila skill ni vs chief-of-staff:** guna **weekly-review** (skill ni) bila Abam explicitly minta audit sistem komitmen peribadi (GTD-style). Guna **chief-of-staff** untuk "weekly review" biasa yang bermaksud brief prioriti projek. Default tanpa konteks eksplisit → chief-of-staff.
+
 ## Activation
 
 Bila skill ini aktif, output:
@@ -61,3 +63,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: GTD 3-phase (Clear/Current/Creative), commitment auditor (STALLED/NO-NEXT-ACTION/health score), 10-area gate tanpa self-certification. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `productivity/weekly-review`, dipisahkan eksplisit dari `chief-of-staff` punya weekly review supaya tiada trigger-phrase collision — ini audit sistem peribadi, bukan brief prioriti projek)
+- **Lv.2** — Proactive Trigger: auto-cadang GTD audit bila item STALLED terkumpul banyak (5+) merentas reminders/decisions/projects tanpa tunggu Abam minta. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Health-Score History: simpan health score setiap review dalam current-session/projek untuk banding trend merentas minggu, bukan snapshot one-off. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Post-Mortem Bridge: item STALLED yang di-drop dengan kesan besar auto-cadang `post-mortem` ringkas supaya pembelajaran kekal. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

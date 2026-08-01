@@ -62,3 +62,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: Conventional Commits parsing, semver bump detection, Keep-a-Changelog render, hotfix severity/SLA + rollback trigger. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `engineering/skills/changelog-generator`, dipermudah ke protokol reasoning terus atas git log sebenar)
+- **Lv.2** — Proactive Offer: selepas batch commit besar (5+ commit) sebelum sesi tamat, tawar generate changelog tanpa tunggu Abam minta. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Diff-Aware Breaking Detect: semak signature function/API sebenar dalam diff (bukan hanya keyword commit) untuk tangkap breaking change yang tak dilabel. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Decision Cross-Reference: breaking change/major bump auto-cross-reference dengan `decisions.md` untuk rasional asal, sertakan dalam entry changelog. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

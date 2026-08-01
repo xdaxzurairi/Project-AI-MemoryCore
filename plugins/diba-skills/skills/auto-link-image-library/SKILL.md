@@ -2,52 +2,36 @@
 name: auto-link-image-library
 description: "Sambungkan output image-prompt ke library, log keputusan, dan trigger anchor bila scope berubah."
 version: 0.1
-level: 2
+level: 4
 ---
 
-# Auto‑Link Image‑Library (Lv 2)
+# Auto‑Link Image‑Library (Lv 4)
+*Selepas image-prompt hasilkan fail — daftar ke library tanpa Abam minta.*
 
 ## Activation
-- Dipanggil secara automatik selepas skill `image-prompt` selesai menghasilkan fail gambar.
+Auto-fire selepas skill `image-prompt` selesai menghasilkan fail gambar.
 
 ## Protocol
-1. **Capture output** – terima path gambar yang dihasilkan oleh `image-prompt`.
-2. **Register to library** – panggil skill `library` dengan metadata:
-   - `name`: nama fail atau tajuk gambar
-   - `tags`: auto‑generate dari context (ambil `anchor` context jika ada)
-   - `size`: ukuran fail
-   - `context`: konteks semasa (dari `anchor` atau `session‑briefing`)
-3. **Log decision** – tambahkan entri ke `log-decision` dengan:
-   - `severity`: Low
-   - `action`: "Register image to library"
-4. **Re‑anchor check** – jika metadata `context` menunjukkan modul luar **IN SCOPE**, trigger `anchor` dengan `re‑anchor` dan set new scope.
-5. **Return confirmation** – balas teks ringkas dalam Bahasa Melayu, < 50 perkataan.
+1. **Capture output** — ambil path gambar dari `image-prompt`.
+2. **Register to library** — panggil skill `library` dengan metadata: `name` (fail/tajuk), `tags` (auto-generate dari context semasa), `size`, `context`.
+3. **Log decision** — `log-decision` severity Low, action "Register image to library".
+4. **Re-anchor check** — context menunjukkan modul luar IN SCOPE semasa → trigger `discipline` (Context Lock) dengan scope baru.
+5. **Confirm** — balas ringkas Bahasa Melayu, < 50 perkataan.
 
 ## Mandatory Rules
-- Semua respons dalam Bahasa Melayu.
-- Tidak menggunakan emoji melainkan diminta.
-- Jika pendaftaran ke library gagal, balas "Gagal daftar gambar, semak permission" dan jangan ubah fail lain.
-- Pastikan output tidak melebihi 100 perkataan.
-- Ikut `code-sharp` standard bila ada perubahan kod.
+- Bahasa Melayu, tiada emoji melainkan diminta.
+- Gagal daftar → "Gagal daftar gambar, semak permission" — jangan ubah fail lain.
+- Output ≤ 100 perkataan.
+- Perubahan kod ikut `code-sharp`.
 
 ## Dependencies
-- `image-prompt`
-- `library`
-- `log-decision`
-- `anchor`
+`image-prompt` · `library` · `log-decision` · `discipline` · `echo-recall`
 
-## Example Usage
-```json
-{
-  "skill": "auto-link-image-library",
-  "input": {
-    "imagePath": "assets/hero.png",
-    "context": "UI Landing Page"
-  }
-}
-```
-
-*Output*: "Gambar `hero.png` berjaya didaftarkan ke library dengan tag `UI Landing Page`."
+## Level History
+- **Lv.1** — Base: capture output, register ke library, log decision Low severity, confirm ringkas.
+- **Lv.2** — Re-anchor Check: kesan modul luar IN SCOPE, trigger `discipline` Context Lock dengan scope baru. (Origin: 2026-07-03)
+- **Lv.3** — Smart Conflict Detect: semak tag/context conflict dengan entri library sedia ada sebelum register, bukan hanya kesan scope re-anchor. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Echo-Recall Bridge: selepas register, gambar jadi node yang boleh dijumpai semula via `echo-recall` link traversal (rujukan wikilink), bukan silo library tersendiri. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
 
 ---
-*Last updated: 2026‑07‑03*
+*Last updated: 2026‑07‑31*

@@ -31,9 +31,8 @@ Kemudian jalankan protokol di bawah.
 - [ ] Nyatakan semula soalan asal sebagai tesis/hipotesis yang boleh disahkan/disangkal
 - [ ] Kenal pasti genre soalan (teknikal/pasaran/perundangan/akademik) — ini tentukan jenis sumber yang releven
 
-### Fasa 3-4: Plan & Capability Discovery
-- [ ] Rangka rancangan carian: apa sumber jenis (web umum, dokumentasi rasmi, forum, akademik) diperlukan untuk setiap tesis
-- [ ] Semak keupayaan carian yang ada (WebSearch/WebFetch) sebelum mula
+### Fasa 3-4: Plan & Capability
+- [ ] Rangka rancangan carian (apa sumber jenis — web umum, dokumentasi rasmi, forum, akademik — diperlukan untuk setiap tesis) dan semak serentak keupayaan carian yang ada (WebSearch/WebFetch) sebelum mula
 
 ### Fasa 5: Search Loop
 - [ ] Kumpul sumber merentas jenis berlainan (bukan 5 artikel dari sumber sama)
@@ -70,3 +69,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: 9-fasa disiplin (Reframe→Genre→Plan→Capability→Search→Triangulate ≥3 sumber→Synthesize+adversarial→Verify→Refresh targets), per-source verbatim files, no fabricated citation. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `research/deep-research`, dipetakan penuh ke WebSearch/WebFetch DIBA sebagai rakan berat kepada `pulse`)
+- **Lv.2** — Proactive Escalation: bila keputusan besar dikesan (pelaburan, pilihan tech stack major) tanpa Abam explicitly minta "deep research", tawar eskalasi dari carian biasa. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Refresh Radar: bahagian Fasa 9 "mungkin lapuk cepat" auto-tandakan ke `reminders.md` untuk semak semula pada tarikh munasabah. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Decision Bridge: tesis yang disahkan ≥3 sumber auto-cadang log ke `decisions.md` sebagai asas keputusan, dengan sumber sebagai rujukan rationale. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

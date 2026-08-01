@@ -58,3 +58,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: scan kawasan berisiko, prioritize WSJF-ringkas, dashboard trend top-5. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `engineering/skills/tech-debt-tracker`, dipermudah dari tool-driven scan+dashboard penuh ke protokol reasoning yang scan semasa kerja sebenar dijalankan)
+- **Lv.2** — Proactive Threshold: item debt sama dikesan 3+ kali merentas sesi berbeza auto-naikkan prioriti tanpa tunggu scan diminta. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Persistent Trend: simpan snapshot scan dalam projek supaya New/Tracked/Resolved benar-benar berterusan merentas sesi, bukan hanya dalam satu scan semasa. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Focused-Fix Bridge: item top-priority debt yang match bug aktif auto-cadang gabung dengan `focused-fix` Step 3 DIAGNOSE, elak dua kerja berasingan untuk punca sama. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

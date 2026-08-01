@@ -56,3 +56,6 @@ Bila skill ini aktif, output ringkasan tersusun terus (tiada activation banner b
 
 ## Level History
 - **Lv.1** — Base: 4-section organizer (Projects/Ideas, Tasks, Connections, How I Can Help), zero-info-loss + voice-preservation, connections verified-only, max 1 clarifying question. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `productivity/capture`, disesuaikan untuk gaya rojak Abam — reflect balik guna nada asal, bukan reformat formal)
+- **Lv.2** — Proactive Detection: kesan brain-dump tanpa Abam kata explicit "brain dump" — terus organize bila mesej panjang tanpa struktur dikesan. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Auto-Chain: item Tasks bertarikh auto-hantar ke `check-reminders`, item Projects/Ideas besar auto-catat follow-up dalam `current-session.md`. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Manage-Project Bridge: item Projects/Ideas yang match projek aktif (disahkan via registry) auto-link terus ke `projects/active/[nama]`, bukan sekadar seksyen Connections pasif. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

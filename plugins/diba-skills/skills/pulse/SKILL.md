@@ -68,3 +68,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: 4-question intake, multi-source search loop, 3-count citation audit, konsensus/kontroversi/trend synthesis, never-fail-silent rule. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `research/pulse`, dipetakan ke WebSearch/WebFetch DIBA sedia ada tanpa Reddit/HN API khusus)
+- **Lv.2** — Proactive Suggest: bila topik dibincang time-sensitive (harga, versi produk, trend), tawar pulse-check tanpa Abam minta. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Window Auto-Adjust: kalau default 30 hari terlalu jarang/banyak, auto-expand/kecilkan window dan nyatakan penyesuaian secara jujur. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Deep-Research Escalation: bila jumpa tesis kontroversi/kompleks yang perlu triangulation, auto-cadang eskalasi ke `deep-research` dengan tesis sedia disediakan. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

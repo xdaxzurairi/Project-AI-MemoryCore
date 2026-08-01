@@ -64,3 +64,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: audit hygiene, klasifikasi risiko, rotation workflow 4-langkah. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `engineering/skills/env-secrets-manager`, dipermudah dari cloud-secret-store comparison + Python `env_auditor.py` ke protokol audit reasoning terus, kerana DIBA tak run script berasingan)
+- **Lv.2** — Proactive New-Project Scan: auto-semak `.gitignore`/`.env` hygiene sebelum commit pertama projek baru, chain dengan `auto-learn-new-folder`, tanpa tunggu Abam minta audit. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Provider-Aware Rotation: sediakan langkah rotation spesifik ikut provider biasa (Supabase, AWS, Vercel), bukan langkah generik sahaja. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Security-Guidance Bridge (dua-hala): hardcoded secret flag dari `security-guidance` auto-trigger rotation workflow terus, bukan hanya rujukan Edge Case pasif. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

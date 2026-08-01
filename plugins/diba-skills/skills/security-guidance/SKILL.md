@@ -59,3 +59,6 @@ Jika bersih: teruskan tanpa output tambahan (jangan spam confirmation kosong).
 
 ## Level History
 - **Lv.1** — Base: 7 corak anti-pattern (command injection, eval, innerHTML, SQL f-string, pickle/yaml unsafe, hardcoded secrets, CI/CD injection), session-cache elak spam. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `engineering/security-guidance`, asal PreToolUse hook Python; disesuaikan jadi semakan reasoning senyap sebelum Edit/Write kerana DIBA tiada hook-execution layer sendiri)
+- **Lv.2** — Pre-Commit Scan: turut semak sebelum commit (chain dengan auto-commit), tangkap corak yang lepas semasa edit individu tapi nampak masalah bila dilihat sebagai satu batch. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Severity-Aware Silence: risiko tinggi (hardcoded secret, SQL injection) tetap output walau session-cache dah flag sekali — risiko tinggi tak patut senyap selepas amaran pertama pada fail sama. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Env-Secrets Bridge (dua-hala): hardcoded secret detect auto-trigger `env-secrets-manager` Step 2 (klasifikasi risiko) terus, bukan hanya rujukan pasif. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

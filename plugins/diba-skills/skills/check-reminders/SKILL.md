@@ -82,3 +82,5 @@ Pada session start (bersama briefing), baca `main/current-session.md`:
 ## Level History
 - **Lv.1** -- Base: session start/end lifecycle, natural language detection, deadline tracking, append-only Open section, move-to-Completed pattern.
 - **Lv.2** -- Follow-up Scan: surface follow-up dari `current-session.md` pada session start. (Origin: 2026-05-22 — naikkan skill batch)
+- **Lv.3** -- Mid-Session Match: bukan hanya session start/end, kesan bila topik perbualan semasa match reminder terbuka dan surface on-the-fly. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** -- Weekly-Review Bridge: reminder overdue lama (14+ hari) auto-flag ke `weekly-review` STALLED audit tanpa Abam perlu run audit manual. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

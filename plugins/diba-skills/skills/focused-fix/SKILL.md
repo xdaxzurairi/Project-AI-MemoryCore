@@ -69,3 +69,6 @@ Kemudian jalankan protokol di bawah.
 
 ## Level History
 - **Lv.1** — Base: disiplin Scope→Trace→Diagnose→Fix→Verify, 3-strike escalation, risk labelling. (Origin: 2026-07-23 — port dari `xdaxzurairi/xdibax-skills` `engineering/skills/focused-fix`, disesuaikan sebagai protokol reasoning bercek, bukan command-pipeline berasingan)
+- **Lv.2** — Proactive Scope-Lock: auto-detect scope creep semasa fix (Abam sebut isu lain tengah-tengah), auto-catat berasingan tanpa perlu diingatkan. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.3** — Pattern Memory: kalau punca akar sama pernah timbul (rujuk `tech-debt-tracker`/signal-buffer), rujuk balik supaya fix konsisten dengan penyelesaian lepas. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Security-Guidance Gate: sebelum Step 4 FIX ditulis untuk fix yang sentuh input/auth/data, auto-semak `security-guidance` dulu supaya fix tak introduce vuln baru. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)

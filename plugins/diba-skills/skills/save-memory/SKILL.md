@@ -42,3 +42,5 @@ When this skill activates, output:
 ## Level History
 - **Lv.1** — Base: Save conversation insights to memory files on command.
 - **Lv.2** — Session Chain: sentiasa sync `current-session.md` + optional reminders; chain ke save-diary bila sesi signifikan. (Origin: 2026-05-22 — naikkan skill batch)
+- **Lv.3** — Proactive Save: DIBA sendiri detect maklumat penting/keputusan disebut tanpa Abam kata "save", tawar simpan segera. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
+- **Lv.4** — Auto-Learn Trigger: selepas save signifikan, auto-semak saiz `signal-buffer.md`; kalau dah besar, cadang auto-learn segera tanpa tunggu eod. (Origin: 2026-07-31 — upskill batch Lv1-3→Lv4, arahan Abam)
