@@ -96,7 +96,7 @@ Draft ready -- approve to forge?
 
 **For NEW skill:**
 1. Create skill folder: `plugins/[plugin-name]/skills/[skill-name]/`
-2. Write `SKILL.md` following the **Skill File Template** below (frontmatter, activation, context guard, protocol, rules, Level History starting at Lv.1)
+2. Write `SKILL.md` following the standard structure (frontmatter, activation, context guard, protocol, rules, Level History starting at Lv.1) -- see **Forge Principles**
 3. Verify file was created successfully
 
 **For LEVEL-UP:**
@@ -140,49 +140,7 @@ Your AI evolved!
 6. **Respect existing skills** -- level-up before creating duplicates. Check if an existing skill could handle the case first
 7. **Level history is permanent** -- append-only record of how the skill evolved
 
-## Skill File Template
-
-When Forge creates a new skill, use this structure:
-
-```markdown
----
-name: [skill-name]
-description: "[When this skill should auto-trigger -- include trigger phrases
-             and context descriptions]"
----
-
-# [Skill Name] -- [One-line description]
-*[Thematic tagline]*
-
-## Activation
-
-When this skill activates, output:
-"[Activation message]"
-
-## Context Guard
-
-| Context | Status |
-|---------|--------|
-| **[Trigger condition 1]** | ACTIVE -- [action] |
-| **[Trigger condition 2]** | ACTIVE -- [action] |
-| **[Non-trigger context]** | DORMANT |
-
-## Protocol
-
-### Step 1: [First action]
-- [ ] [Substep]
-- [ ] [Substep]
-
-### Step 2: [Second action]
-- [ ] [Substep]
-
-## Mandatory Rules
-1. [Rule 1]
-2. [Rule 2]
-
-## Level History
-- **Lv.1** -- Base: [description of initial capabilities]. (Origin: [what triggered creation])
-```
+Standard structure for every skill file: frontmatter (`name` + `description` with trigger phrases) -> Activation message -> Context Guard table -> Protocol steps -> Mandatory Rules -> Level History (append-only, starts at Lv.1). Reuse an existing skill's SKILL.md as the concrete template rather than a separate scaffold here.
 
 ## What Makes a Good Skill
 

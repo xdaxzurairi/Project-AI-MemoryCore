@@ -30,94 +30,28 @@ Abam provide:
 ## Formula Per Platform
 
 ### LinkedIn
-
-**Formula:** Hook kuat → Story/Insight → Lesson/Value → CTA
-
-**Struktur:**
-```
-[Hook — 1-2 baris, buat orang stop scroll]
-
-[Spacing — baris kosong]
-
-[Body — 3-7 paragraf pendek, setiap paragraf 1-3 baris]
-[Guna spacing untuk readability]
-[Boleh guna bullet points atau numbering]
-
-[Lesson atau takeaway]
-
-[CTA — soalan atau ajakan engage]
-
-[Hashtags — 3-5, mix broad dan niche]
-```
-
-**Best practices:**
-- Mulakan dengan hook tanpa "I" — avoid "I am excited to share..."
-- Guna line breaks aggressively — LinkedIn reward readable content
-- Personal story > abstract advice
-- End dengan soalan untuk encourage comments
-- Panjang optimum: 150-300 patah perkataan
+**Formula:** Hook kuat → Story/Insight → Lesson/Value → CTA → Hashtags (3-5, mix broad+niche)
+**Struktur:** Hook (1-2 baris) → spacing → body (3-7 paragraf pendek, bullet/numbering ok) → lesson/takeaway → CTA (soalan/ajakan engage)
+**Nota:** 150-300 patah perkataan; line breaks aggressive; elak hook mula dengan "I" (cth "I am excited to share...").
 
 ### Twitter / X
-
-**Formula:** Statement berani → Thread atau standalone
-
-**Standalone tweet:**
-```
-[Hook statement — max 240 chars]
-[Optional: context atau punch line]
-[Optional: CTA atau hashtag 1-2]
-```
-
-**Thread (jika topik panjang):**
-```
-1/ [Hook tweet — buat orang nak baca thread]
-
-2/ [Point 1 — dengan context]
-
-3/ [Point 2]
-
-...
-
-[N]/ [Conclusion + CTA]
-
-RT appreciated if this helped 🙏
-```
-
-**Best practices:**
-- Tweet 1 mesti punch — ini yang orang tengok first
-- Setiap tweet dalam thread mesti berdiri sendiri
-- Opinions perform better than pure facts
-- Engage dengan replies — Twitter is conversation
+**Formula:** Statement berani → standalone atau thread
+**Standalone:** Hook (max 240 chars) → optional context/punch line → optional CTA/hashtag 1-2
+**Thread:** `1/` hook tweet → `2/`, `3/`...point demi point → `[N]/` conclusion + CTA
+**Nota:** setiap tweet dalam thread self-contained; opinion konkrit lebih baik dari pure facts.
 
 ### Instagram
+**Formula:** Hook → Story/Info → CTA → Hashtags (5-15, mix popular+niche)
+**Struktur:** Hook baris pertama (IG potong lepas ini) → spacing → body (boleh panjang, front-load value, emoji untuk visual break) → CTA (save/share/comment/link in bio) → spacer `.` → hashtags
+**Nota:** untuk carousel, caption jadi teaser sahaja; guna CTA visual seperti "Save this post" / "Tag a friend".
 
-**Caption formula:** Hook → Story/Info → CTA
-
-```
-[Hook baris pertama — IG potong selepas baris pertama]
-
-[Spacing]
-
-[Body — boleh panjang, tapi front-load value]
-[Emoji boleh digunakan untuk visual break]
-[Storytelling approach works best]
-
-[CTA — save, share, comment, link in bio]
-
-[Full stop atau spacer]
-.
-.
-.
-[Hashtags — 5-15, mix popular dan niche]
-#hashtag1 #hashtag2 #hashtag3
-```
-
-**Best practices:**
-- Baris pertama adalah yang paling penting
-- Caption boleh panjang — tapi hook mesti kuat
-- Carousel content: caption perlu teaser, content ada dalam slide
-- Hashtags: jangan semua mega-popular, mix niche tags
-- Strong visual CTA: "Save this post", "Tag a friend who needs this"
+## Tips Umum (Semua Platform)
+- Baris/tweet pertama paling penting — tentukan stop-scroll atau tidak
+- Personal story + opinion konkrit > abstract/generic advice
+- Hashtags: mix niche dengan mega-popular untuk reach lebih tepat
+- Engage comments/replies dalam 1 jam pertama
+- Consistency > satu viral post
+- Posting time: LinkedIn (Sel-Kha pagi), Twitter/X (setiap hari), Instagram (petang)
 
 ## Output Yang DIBA Beri
 
@@ -150,8 +84,3 @@ Kalau Abam nak build consistent presence, DIBA boleh help define content pillars
 - **Opinion/Hot takes** — controversial tapi grounded opinions
 - **Engagement** — soalan, polls, sharing
 - **Promotion** — product/service (maksimum 20% dari total)
-
-## Tips Tambahan
-- Best posting time: LinkedIn (Selasa-Khamis pagi), Twitter/X (setiap hari), Instagram (petang)
-- Consistency > viral post
-- Engage dengan comments dalam 1 jam pertama selepas post
