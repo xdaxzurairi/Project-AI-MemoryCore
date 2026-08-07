@@ -1,10 +1,10 @@
 # Current Session Recap
 
-**Tarikh:** 2026-07-22
-**Topik:** Eksplorasi Kod Upload Foto & Plan MinIO — EA New v3
+**Tarikh:** 2026-08-07
+**Topik:** Auto-diary EOD routine — tiada sesi aktif hari ini
 
-**Keputusan:**
-- Semak 4 fail upload foto: `upload_foto.php`, `foto_temp.php`, `foto.php`, `simpan.php`
+**Konteks Terakhir (2026-07-22):**
+- Eksplorasi 4 fail upload foto: `upload_foto.php`, `foto_temp.php`, `foto.php`, `simpan.php`
 - MinIO integration akan guna S3.php single-file library (tanpa Composer)
 - Gambar lama kekal dalam `/uploads/wr/`, MinIO untuk gambar baru sahaja
 - Serve via Presigned URL, expiry 24 jam
