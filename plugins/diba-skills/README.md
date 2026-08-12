@@ -22,7 +22,7 @@ One owner per phrase. Before adding or leveling a skill, grep this table — a p
 | Skill | Owned triggers |
 |-------|----------------|
 | save-memory | "save", "save memory", "save progress", "update memory" |
-| save-diary | "save diary", "write diary", "log this session", "document this" · auto after code change · idle 20 min auto-save |
+| save-diary | "save diary", "write diary", "log this session", "document this" · auto after code change · SessionEnd hook safety-net |
 | echo-recall | "recall", "ingat semula", "load context", "do you remember", "Diba ingat tak", "when did we", "what did we decide about", "last time we" · workspace recall via `projects/registry.md` |
 | token-guard | "jimat token", "hemat token", "compact mode", "checkpoint", "resume", "token limit" |
 | usage-tracker | "ccusage", "usage report", "berapa token", "kos token", "budget AI" |

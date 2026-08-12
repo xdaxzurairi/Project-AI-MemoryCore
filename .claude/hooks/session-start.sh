@@ -54,6 +54,20 @@ done
 total=$(ls "$SKILLS_DIR" | wc -l)
 echo "DIBA: $total skills active"
 
+# --- Diary folder + today's file auto-ensure ---
+# Honest: fires on the real SessionStart event. Creates the diary folder
+# and today's file so a diary target always exists when a project opens.
+# It does NOT write session content — the save-diary skill (model-side) does.
+DIARY_CUR="$DIBA_DIR/daily-diary/current"
+mkdir -p "$DIARY_CUR"
+TODAY_FILE="$DIARY_CUR/$(date +%Y-%m-%d).md"
+if [ ! -f "$TODAY_FILE" ]; then
+    printf '# DIBA Session Diary - %s\n' "$(date '+%B %d, %Y')" > "$TODAY_FILE"
+    echo "DIBA: diary folder ready — $(basename "$TODAY_FILE") created"
+else
+    echo "DIBA: diary ready — $(basename "$TODAY_FILE")"
+fi
+
 # Ruflo memory sync (background, jangan block session start)
 XDIBAX_DIR="C:/Users/BSM/XDIBAX"
 if command -v ruflo &>/dev/null && [ -f "$XDIBAX_DIR/.claude-flow/hooks/memory-sync.js" ]; then
