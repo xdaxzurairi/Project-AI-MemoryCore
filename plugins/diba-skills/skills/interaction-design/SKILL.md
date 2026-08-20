@@ -1,6 +1,6 @@
 ---
 name: interaction-design
-description: "Reka & implement microinteraction, motion, transition, dan feedback pattern — termasuk DIBA Presence di War Room & chat. Auto-triggers bila bina/poles UI, loading state, hover/focus, toast, agent-active feedback, atau bila Abam kata 'poles UI', 'tambah animasi', 'buat smooth', 'microinteraction', 'motion', 'interaction design', 'DIBA presence'. Lv.6: polish pass + visual language DIBA + chain code-sharp/frontend-design/diba-response."
+description: "Reka & implement microinteraction, motion, transition, dan feedback pattern — termasuk DIBA Presence di dashboard/3D UI & chat. Auto-triggers bila bina/poles UI, loading state, hover/focus, toast, agent-active feedback, atau bila Abam kata 'poles UI', 'tambah animasi', 'buat smooth', 'microinteraction', 'motion', 'interaction design', 'DIBA presence'. Lv.6: polish pass + visual language DIBA + chain code-sharp/frontend-design/diba-response."
 ---
 
 # Interaction Design — Motion, Feedback & DIBA Presence
@@ -21,7 +21,7 @@ Output ringkas selepas polish pass (Lv.6): `"Interaction pass: [N] elemen · [N]
 | **Bina komponen UI baru** | ACTIVE — tokens + feedback states + DIBA accent |
 | **Poles / "buat smooth" / GUI revamp** | ACTIVE — full Lv.6 polish pass |
 | **Loading / async / agent poll** | ACTIVE — skeleton, progress, agent-active pulse |
-| **War Room 3D + HUD** | ACTIVE — sync 3D feedback ↔ panel glass UI |
+| **3D scene + HUD** | ACTIVE — sync 3D feedback ↔ panel glass UI |
 | **Backend / logic sahaja** | DORMANT |
 | **prefers-reduced-motion ON** | OVERRIDE — fungsi kekal, motion minimum |
 
@@ -74,20 +74,7 @@ Motion **berkomunikasi**, bukan menghias:
 ## Lv.2 — Motion Token System (WAJIB sebelum animasi baru)
 
 ### Rule
-**Tiada magic number.** Semua duration/easing/color motion guna token projek.
-
-### War Room / DIBA Dashboard
-Extend design system sedia ada — jangan cipta sistem parallel:
-
-```css
-/* Selaraskan dengan --ui-* dalam index.html */
---motion-surface: var(--ui-surface);
---motion-accent:  var(--ui-accent);
---motion-warm:    var(--ui-warm);
---motion-success: var(--ui-success);
---motion-ease:    var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
---motion-dur:     var(--dur-fast, 200ms);
-```
+**Tiada magic number.** Semua duration/easing/color motion guna token projek — extend design system sedia ada, jangan cipta sistem parallel (motion token merujuk `--ui-*` token semasa projek: surface, accent, warm, success, ease, duration).
 
 ### Audit Token (quick)
 - [ ] Tiada `transition: 0.3s` tanpa variable
@@ -105,18 +92,17 @@ Setiap **elemen interaktif** mesti laluan visual penuh:
 
 | Elemen | Hover | Active/Press | Loading | Success | Error |
 |--------|-------|--------------|---------|---------|-------|
-| Butang panel | border ↑, bg soft | scale 0.98 atau bg ↑ | opacity + spinner inline | flash accent 150ms | border merah + teks |
+| Butang | border ↑, bg soft | scale 0.98 atau bg ↑ | opacity + spinner inline | flash accent 150ms | border merah + teks |
 | Collapsible header | bg subtle | — | — | chevron rotate | — |
-| Project row | bg ↑ | — | opacity 0.6 | badge pulse | disabled state |
-| NPC / agent | label pill | — | progress bar + task | emote / level-up | bar merah |
-| 3D lightpost | — | — | — | lamp pulse sin(t) | lamp off |
-| Stat HUD | — | — | tabular flash on change | accent on new data | — |
+| List/row item | bg ↑ | — | opacity 0.6 | badge pulse | disabled state |
+| Agent/task indicator | label pill | — | progress bar + task | emote/pulse selesai | bar merah |
+| Live stat/counter | — | — | tabular flash on change | accent on new data | — |
 
 ### Async Rule
 1. Optimistic update segera
 2. Loading state ≤ 300ms visible (atau skeleton)
 3. Rollback + error message jika gagal
-4. **Agent poll** — visual berubah dalam 1 poll cycle (War Room: `pollActiveAgents`)
+4. **Agent poll** — visual berubah dalam 1 poll cycle
 
 ### Chat (diba-response)
 Respons DIBA = feedback choreography dalam teks: **keputusan → bukti → next step** (bukan wall of text).
@@ -142,16 +128,16 @@ Fail mana-mana item → fix sebelum claim siap (chain `code-sharp` verify).
 
 ## Lv.5 — Framework Adapt (ikut stack, jangan paksa library)
 
-| Stack | Implementasi | War Room contoh |
-|-------|--------------|-----------------|
-| **Vanilla** | CSS transition + keyframe + rAF | `#loading.fade-out`, `updateLightposts(t)`, panel `backdrop-filter` |
-| **Three.js HUD** | CSS2D labels + HTML glass panels | `.building-label` pill, `.npc-chat` bubble |
-| **React** | `framer-motion` spring + `AnimatePresence` | — |
-| **Timeline berat** | GSAP hanya jika justified | — |
+| Stack | Implementasi |
+|-------|--------------|
+| **Vanilla** | CSS transition + keyframe + rAF; `backdrop-filter` untuk panel glass |
+| **Three.js / CSS2D** | HTML label/panel overlay atas canvas 3D |
+| **React** | `framer-motion` spring + `AnimatePresence` |
+| **Timeline berat** | GSAP hanya jika justified |
 
 **Rule:** Ikut konvensyen repo. Library baru → tanya Abam kecuali sudah dalam `package.json`.
 
-### Vanilla Snippet — DIBA accent pulse (reusable)
+### Vanilla Snippet — accent pulse (reusable)
 
 ```css
 @keyframes diba-pulse {
@@ -161,7 +147,7 @@ Fail mana-mana item → fix sebelum claim siap (chain `code-sharp` verify).
 .diba-live { animation: diba-pulse 2s var(--ease-in-out) infinite; }
 ```
 
-Guna class `diba-live` pada HUD stat **Active Skill** bila agent working — bukan random glow.
+Guna class `diba-live` pada indikator "agent working" — bukan random glow.
 
 ---
 
@@ -181,68 +167,43 @@ Guna class `diba-live` pada HUD stat **Active Skill** bila agent working — buk
 
 **Anti-drift visual:** Courier neon hijau, letter-spacing 4px, border `#00ff88` — **elak** kecuali Abam minta retro mode.
 
-### 6.2 3D ↔ HUD Sync (War Room)
+Untuk 3D scene + HUD sync (NPC progress, lightpost pulse, minimap, War Room `logEvent`/parser detail) — rujuk skill projek **virtual-hq** (`project_virtual_hq_3d_npc`), bukan diulang di sini.
 
-Bila `agentActive` / `working`:
-- NPC progress bar + chat bubble
-- Lightpost lamp pulse (house ↔ skill index)
-- HUD `#s-active` update + optional `diba-live` class
-- Minimap dot brighter untuk skill aktif
-
-Bila tiada kerja: semua pulse off — **rest state** jelas (bandar tenang, bukan mati).
-
-### 6.3 Polish Pass Protocol (WAJIB selepas ubah UI)
+### 6.2 Polish Pass Protocol (WAJIB selepas ubah UI)
 
 ```
 1. INVENTORY — senarai semua clickable/hoverable (HTML + CSS2D)
 2. SCORE — setiap item: feedback? motion? a11y? diba-presence?
 3. FIX — minimum-impact; ikut code-sharp
 4. VERIFY — hard refresh / reduced-motion test
-5. RECORD — save-diary + optional logEvent('interaction', skillId) di War Room
+5. RECORD — save-diary
 6. REPORT — 3 baris ke Abam: apa diubah, bukti, verify step
 ```
 
-### 6.4 Chat Presence (chain diba-response)
+### 6.3 Chat Presence (chain diba-response)
 
 Bila poles UI, respons chat mesti:
 - Sebut **apa user akan nampak** ("lampu tiang berkelip bila agent working")
 - Citation `path:line` untuk perubahan kod
 - **Tanpa** filler "Sudah tentu" / "Baik saya akan"
 
-Identiti operator: *"Saya Diba"* hanya bila sesuai — nilai dulu, persona kedua.
-
-### 6.5 Skill Chain (auto)
+### 6.4 Skill Chain (auto)
 
 ```
-interaction-design (Lv.6 pass)
-  → code-sharp (minimum diff + verify)
-  → frontend-design (jika layout/visual besar)
-  → diba-response (report excellence)
-  → save-diary (delta rekod)
+interaction-design (Lv.6 pass) → code-sharp (verify) → frontend-design (jika layout besar) → diba-response (report) → save-diary
 ```
-
-### 6.6 War Room Integration
-
-- Parser level: `Level History` dalam SKILL.md → server `parseSkillLevel`
-- Skill usage: post ke `skill-log.jsonl` via `logEvent` bila interaction pass siap
-- NPC skill `interaction-design` lv 6 — deskripsi selaras dengan polish pass
 
 ---
 
-## Integrasi
+## Integrasi & Mandatory Rules
 
 | Skill | Hubungan |
 |-------|----------|
 | `code-sharp` | Motion selepas struktur; verify sebelum done |
 | `frontend-design` | Visual hierarchy + layout; interaction tambah motion layer |
 | `diba-response` | Report + presence dalam chat |
-| `diba-operator` | Agent-active states ↔ UI feedback |
 | `save-diary` | Auto selepas polish pass berjaya |
 | `discipline` | Bila motion melampau atau drift visual — Context Lock |
-
----
-
-## Mandatory Rules
 
 1. Motion = purpose; decorative-only → buang
 2. Token first (Lv.2) sebelum animasi baru
@@ -256,8 +217,8 @@ interaction-design (Lv.6 pass)
 ## Level History
 
 - **Lv.1** — Base: purposeful motion, timing scale, easing tokens, pattern teras, a11y minimum. (Origin: 2026-06-15 — adaptasi Aura interaction-design)
-- **Lv.2** — Motion Token System: token terpusat, War Room `--ui-*` extension, no magic number. (Origin: 2026-06-15)
+- **Lv.2** — Motion Token System: token terpusat, `--ui-*` extension, no magic number. (Origin: 2026-06-15)
 - **Lv.3** — Feedback Choreography: hover→active→loading→success/error per elemen; agent poll sync. (Origin: 2026-06-15)
 - **Lv.4** — A11y & Performance Guard: 8-point gate, focus visible, 60fps. (Origin: 2026-06-15)
 - **Lv.5** — Framework Adapt: vanilla/Three HUD/React/GSAP ikut stack; `diba-pulse` snippet. (Origin: 2026-06-15)
-- **Lv.6** — DIBA Presence Engine: visual language, 3D↔HUD sync, polish pass protocol, skill chain, War Room log, anti-cyberpunk drift. (Origin: 2026-06-15 — Abam: upgrade Lv.1→6, interaction padu, menyerlahkan DIBA)
+- **Lv.6** — DIBA Presence Engine: visual language, polish pass protocol, skill chain. 3D↔HUD sync detail dipindah ke skill `virtual-hq`. (Origin: 2026-06-15 — Abam: upgrade Lv.1→6, interaction padu, menyerlahkan DIBA)
