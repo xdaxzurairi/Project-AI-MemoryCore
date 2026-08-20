@@ -11,6 +11,7 @@
 | **Memory** | Markdown + git auto-commit — model-agnostic, tak pernah hilang |
 | **Dokumentasi** | [MANUAL.md](MANUAL.md) · [Blueprint](plans/DIBA-v3-Blueprint.md) · [Audit CTO](plans/CTO-AUDIT-2026-07-04.md) · [Trigger Registry](plugins/diba-skills/README.md) |
 
+
 ---
 
 ## 🎯 Apa DIBA Buat
@@ -376,7 +377,7 @@ Engine self-improvement — cipta/naik taraf skill dari pattern berulang (3+), k
 
 ---
 
-## 🧩 Skill Feature Gap-Fill (9)
+## 🧩 Skill Feature Gap-Fill (13)
 
 *Install dari `Feature/` bila tiada plugin counterpart:*
 
@@ -391,6 +392,10 @@ Engine self-improvement — cipta/naik taraf skill dari pattern berulang (3+), k
 | `image-prompt` | 1 | Prompt Midjourney/NijiJourney composition-aware | `midjourney prompt` · `image prompt` · `draw this` |
 | `interactive-story` | 1 | Visual Novel RPG adventure engine | `new adventure` · `VN mode` · `let's play` |
 | `song-creation` | 1 | Album/lagu dari imej — visual-to-musical | `create songs` · `new album` · `song from image` |
+| `image-generation` | 1 | Render deskripsi jadi PNG sebenar via OpenAI gpt-image API — cost-confirmed | `render an image` · `generate image` · `make an image of` |
+| `video-generation` | 1 | Render deskripsi jadi MP4 via Seedance API (text/image-to-video, async, cost-gated) | `render a video` · `animate this` · `animate this image` |
+| `memory-compaction` | 1 | Kompresi budget-aware — ringkaskan entry lama jadi history block reversible | `compact memory` · `compact [file]` · `check budgets` |
+| `topic-diary` | 1 | Jurnal memory ikut topik — discovery/fix/lesson merentas sesi | `save topic` · `save to topic diary` · `review topic` |
 
 ---
 
