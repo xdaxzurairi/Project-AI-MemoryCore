@@ -1,33 +1,28 @@
 # Current Session Recap
 
-**Tarikh:** 2026-08-04
-**Topik:** EA New v3 — login redesign + fix bug Seksyen + MinIO integration (test dev LULUS, test browser tergantung)
+**Tarikh:** 2026-08-22
+**Topik:** Telegram bot setup (@Xdibax_bot) + KailPro brainstorm + permissions
 
 **Keputusan:**
-- Login page ditukar split-screen korporat — confirmed Abam
-- Bug dropdown SEKSYEN "Ralat": punca corrupted `/m<?php` dalam `ajax/get_seksyen.php` — fixed
-- MinIO: custom `MinioClient` (SigV4 manual) berbanding vendor library luar
-- Object key prefix `ea_newv3/`, format dipendekkan ikut arahan Abam:
-  `ea_newv3/{no_aduan}/foto{n}.ext` (buang lapisan `wr/`)
-- Fallback wajib: MinIO down → simpan local `uploads/wr/` macam asal
-- Test CLI terhadap MinIO dev sebenar (upload + presigned GET + simulasi JPEG)
-  LULUS penuh — turut sahkan reachability terus (redirect 302 kekal, tak perlu proxy)
-- Isu `curl.cainfo` php.ini rosak dibetulkan dalam kod (`applyCaBundle()`), bukan
-  ubah `php.ini` server dikongsi
-
-**Fail terakhir diubah (ea_newv3):**
-- `index.php` — redesign split-screen login
-- `ajax/get_seksyen.php` — fix corrupted opening tag
-- `includes/S3.php`, `includes/minio.php` (baru) — MinioClient + wrapper
-- `.env`, `.env.example` — MINIO_* config dev
-- `pages/simpan.php` — simpanFotoDB() cuba MinIO dulu, fallback local
-- `ajax/foto.php` — diskriminator lama/baru + presigned redirect
-- Semua lulus `php -l`; test CLI dev LULUS
+- Ollama setup reminder **dibuang** (discarded oleh Abam)
+- **Telegram bot baru dibuat:** @Xdibax_bot
+  - Token: dalam `.env` (gitignored, JANGAN commit)
+  - Chat ID: `868351859` (Abam personal)
+  - Script: `scripts/send-diary-telegram.js` (baru dibina)
+  - **Test pending** — Isnin 2026-08-24 dari PC opis (cloud block api.telegram.org)
+- **KailPro** didaftarkan sebagai projek baru
+  - SaaS app untuk pemancing Malaysia (GPS trip log, lubuk ikan, port parking)
+  - Stack: React PWA + Supabase + Leaflet.js + ToyyibPay
+  - Free vs Pro tier ditetapkan
+  - SDLC plan: 5 fasa, 10 minggu MVP
+  - Files: `projects/active/kailpro/` (index.md, features.md, sdlc.md)
+- **Auto permissions** untuk DIBA — GAGAL oleh auto mode classifier
+  - Perlu Abam edit `.claude/settings.json` sendiri
+  - Block permissions yang dicuba ada dalam chat
 
 **Follow-up terbuka:**
-- Test guna borang sebenar dalam browser — TERGANTUNG, sambungan Claude in
-  Chrome extension belum aktif (perlu Abam pasang/connect claude.ai/chrome dulu)
-- Sahkan reachability rasmi dengan IT dept (test dev dah tunjuk boleh, belum rasmi)
-- Prod `.env` berasingan belum disediakan — credential prod ada, belum guna
-- Retention/cleanup policy foto orphan — belum diputuskan (fasa 2)
-- Rujuk `projects/active/ea-newv3-minio-integration.md` Seksyen 9-12 untuk detail penuh
+- Test Telegram dari PC opis Isnin 2026-08-24
+- KailPro Phase 1: market research + data source confirm (JUPEM API access?)
+- Grant auto permissions DIBA — perlu Abam tambah manually ke `.claude/settings.json`
+- ea_newv3 browser test MinIO masih pending (Chrome extension)
+- Telegram diary → Phase 3 loop (cloud block Telegram, consider GitHub Actions route)

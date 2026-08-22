@@ -3,9 +3,8 @@
 
 ## Open
 
-- **Setup local model kat PC opis (Isnin 2026-07-07):** Install Ollama + `ollama pull qwen2.5:3b`, kemudian test `node scripts/diba-fallback-chat.js` — fallback bila Claude limit. Opsyenal: set `OPENROUTER_API_KEY` untuk backend Nemotron cloud sekali. (Ditambah 2026-07-04 selepas merge PR #17)
-- **Phase 3 — Scheduled Loops (lepas setup Ollama Isnin):** Tutup loop harian/mingguan 100% auto — (1) scheduled morning brief: Claude Code web trigger ATAU Task Scheduler/cron buka sesi "morning brief" jam 8 pagi; (2) weekly review auto hari Jumaat; (3) Telegram bridge supaya brief/reminder sampai ke phone. Rujuk `plans/DIBA-v3-Blueprint.md` Phase 3. (Diluluskan Abam 2026-07-05 — "loop engineering: automasi pencetus")
-- **Save diary → Telegram penuh (permanent):** Setiap save diary, hantar fail hari penuh via `scripts/send-diary-telegram.js`. IDE tidak relevan. Script ada **fallback plain text** bila Markdown parse gagal (underscore/path kod).
+- **Phase 3 — Scheduled Loops:** Tutup loop harian/mingguan 100% auto — (1) scheduled morning brief: Claude Code web trigger ATAU Task Scheduler/cron buka sesi "morning brief" jam 8 pagi; (2) weekly review auto hari Jumaat; (3) Telegram bridge supaya brief/reminder sampai ke phone. Rujuk `plans/DIBA-v3-Blueprint.md` Phase 3. (Diluluskan Abam 2026-07-05 — "loop engineering: automasi pencetus") — **WIP 2026-08-22**
+- **Save diary → Telegram penuh (permanent):** Setiap save diary, hantar fail hari penuh via `scripts/send-diary-telegram.js`. IDE tidak relevan. Script ada **fallback plain text** bila Markdown parse gagal (underscore/path kod). — **Test dari PC opis Isnin 2026-08-24** (bot @Xdibax_bot dah setup, script dah ada, .env perlu create kat PC)
 - **eWorks e-signature:** End-to-end test Borang Arahan Kerja — **jangan sync prod** buat masa ini (keputusan 2026-06-11).
 
 ## Completed
