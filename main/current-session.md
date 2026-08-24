@@ -1,33 +1,27 @@
 # Current Session Recap
 
-**Tarikh:** 2026-08-04
-**Topik:** EA New v3 — login redesign + fix bug Seksyen + MinIO integration (test dev LULUS, test browser tergantung)
+**Tarikh:** 2026-08-24
+**Topik:** Auto-diary EOD scheduled run — no live session today. Konteks terbawa dari 2026-08-04.
 
-**Keputusan:**
-- Login page ditukar split-screen korporat — confirmed Abam
-- Bug dropdown SEKSYEN "Ralat": punca corrupted `/m<?php` dalam `ajax/get_seksyen.php` — fixed
-- MinIO: custom `MinioClient` (SigV4 manual) berbanding vendor library luar
-- Object key prefix `ea_newv3/`, format dipendekkan ikut arahan Abam:
-  `ea_newv3/{no_aduan}/foto{n}.ext` (buang lapisan `wr/`)
-- Fallback wajib: MinIO down → simpan local `uploads/wr/` macam asal
-- Test CLI terhadap MinIO dev sebenar (upload + presigned GET + simulasi JPEG)
-  LULUS penuh — turut sahkan reachability terus (redirect 302 kekal, tak perlu proxy)
-- Isu `curl.cainfo` php.ini rosak dibetulkan dalam kod (`applyCaBundle()`), bukan
-  ubah `php.ini` server dikongsi
+**Projek Aktif:** EA New v3 — MinIO integration
 
-**Fail terakhir diubah (ea_newv3):**
-- `index.php` — redesign split-screen login
-- `ajax/get_seksyen.php` — fix corrupted opening tag
-- `includes/S3.php`, `includes/minio.php` (baru) — MinioClient + wrapper
-- `.env`, `.env.example` — MINIO_* config dev
-- `pages/simpan.php` — simpanFotoDB() cuba MinIO dulu, fallback local
-- `ajax/foto.php` — diskriminator lama/baru + presigned redirect
-- Semua lulus `php -l`; test CLI dev LULUS
+**Status:**
+- Login redesign split-screen: SELESAI
+- Bug Seksyen dropdown: FIXED
+- MinIO CLI dev test: LULUS penuh
+- Browser test borang sebenar: TERGANTUNG
 
-**Follow-up terbuka:**
-- Test guna borang sebenar dalam browser — TERGANTUNG, sambungan Claude in
-  Chrome extension belum aktif (perlu Abam pasang/connect claude.ai/chrome dulu)
-- Sahkan reachability rasmi dengan IT dept (test dev dah tunjuk boleh, belum rasmi)
-- Prod `.env` berasingan belum disediakan — credential prod ada, belum guna
-- Retention/cleanup policy foto orphan — belum diputuskan (fasa 2)
-- Rujuk `projects/active/ea-newv3-minio-integration.md` Seksyen 9-12 untuk detail penuh
+**Follow-up Terbuka:**
+- Abam perlu pasang/connect Claude AI chrome extension untuk sambung browser test
+- Prod `.env` berasingan belum disediakan (credential ada, belum apply)
+- Reachability IT dept belum disahkan rasmi
+- Retention/cleanup foto orphan — tangguh fasa 2
+
+**Fail Utama (ea_newv3):**
+- `index.php` — split-screen login
+- `ajax/get_seksyen.php` — fix corrupted tag
+- `includes/S3.php`, `includes/minio.php` — MinioClient + wrapper
+- `pages/simpan.php` — simpanFotoDB() MinIO + fallback local
+- `ajax/foto.php` — presigned redirect
+
+**Rujukan:** `projects/active/ea-newv3-minio-integration.md` Seksyen 9-12
